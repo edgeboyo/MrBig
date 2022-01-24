@@ -1,9 +1,10 @@
 {
   "name": "mrbig",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Bot that allows not Nitro users to send attachments up to 100MB",
+  "main": "main.js",
   "scripts": {
+    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
