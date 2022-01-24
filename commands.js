@@ -1,3 +1,5 @@
+const { createNewPath } = require("./firebase");
+
 function setUpCommands(client) {
   const commands = [
     { name: "ping", description: "Ping command" },
@@ -9,15 +11,16 @@ function setUpCommands(client) {
   client.on("interactionCreate", async (interaction) => {
     if (!interaction.isCommand()) return;
 
-    const { commandName } = interaction;
+    const { commandName, guildId, channelId, user } = interaction;
 
     switch (commandName) {
       case "ping":
         await interaction.reply("Pong");
         break;
       case "send":
+        const pathId = await createNewPath(guildId, channelId, user.id);
         await interaction.reply(
-          "Link for attachment waiting for you in http://text.com"
+          `Link for attachment waiting for you in http://text.com/${pathId}`
         );
         break;
     }

@@ -2,8 +2,11 @@
 .*
 !.gitignore
 
-#Node Modules
+# Node Modules
 node_modules
 
-#Config
+# Discord config
 config.json
+
+# Firebase config
+firebase.json
