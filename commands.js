@@ -18,7 +18,7 @@ function setUpCommands(client) {
         await interaction.reply("Pong");
         break;
       case "send":
-        const pathId = await createNewPath(guildId, channelId, user.id);
+        const pathId = await createNewPath(guildId, channelId, user.id, client);
         await interaction.reply(
           `Link for attachment waiting for you in http://text.com/${pathId}`
         );
